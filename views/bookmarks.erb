@@ -6,11 +6,22 @@
   </head>
   <body>
     <h1>Bookmark Manager</h1>
-  Your Bookmarks:
-  <ul>
-    <% @bookmarks.each do |bookmark| %>
-    <li><%= bookmark %></li>
-    <% end %>
-  </ul>
+    <div class="">
+      Your Bookmarks:
+        <ul>
+          <% @bookmarks.each do |bookmark| %>
+            <li><%= bookmark %></li>
+          <% end %>
+        </ul>
+    </div>
+    <div class="">
+      <form class="" action="/bookmarks" method="post">
+        <label for="">
+          Add bookmark:
+          <input type="text" name="url" value="">
+        </label>
+          <input type="submit" value="Add">
+      </form>
+    </div>
   </body>
 </html>
