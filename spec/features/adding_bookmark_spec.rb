@@ -3,10 +3,11 @@ feature "Add a new bookmark" do
     connection = PG.connect(dbname: 'bookmark_manager_test')
 
     visit('/bookmarks')
-    fill_in 'url', with: 'https://facebook.com'
+    fill_in 'url', with: 'https://www.askjeeves.com'
+    fill_in 'title', with: 'AskJeeves'
     click_button 'Add'
-
-    expect(page).to have_content("https://facebook.com")
-
+    save_and_open_page
+    
+    expect(page).to have_link( 'AskJeeves', href: 'https://www.askjeeves.com')
   end
 end
