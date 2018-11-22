@@ -40,7 +40,7 @@ describe Bookmark do
   describe '.delete' do
     it 'deletes a bookmark from the list' do
       result = Bookmark.create(url: 'https://www.askjeeves.com', title: "AskJeeves")
-      Bookmark.delete(id)
+      Bookmark.delete(result.id)
       expect(Bookmark.list).not_to include(result)
     end
   end

@@ -6,8 +6,8 @@ feature "Add a new bookmark" do
     fill_in 'url', with: 'https://www.askjeeves.com'
     fill_in 'title', with: 'AskJeeves'
     click_button 'Add'
-    save_and_open_page
     
+
     expect(page).to have_link( 'AskJeeves', href: 'https://www.askjeeves.com')
   end
 end
