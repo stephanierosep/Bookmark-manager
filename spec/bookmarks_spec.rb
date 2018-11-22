@@ -44,4 +44,13 @@ describe Bookmark do
       expect(Bookmark.list).not_to include(result)
     end
   end
+
+  describe '.update' do
+    it 'updates a bookmark' do
+      result = Bookmark.create(url: 'https://www.askjeeves.com', title: "AskJeeves")
+      changed = Bookmark.update(id: result.id, url: 'http://new.com', title: 'new')
+      expect(changed.url).to_not eq(result.url)
+      expect(changed.url).to eq('http://new.com')
+    end
+  end
 end
